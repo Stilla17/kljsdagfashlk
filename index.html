@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Input</title>
+    <style>
+        .password-container {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="password-container">
+        <label for="password">Password:</label>
+        <input type="password" id="password">
+        <button id="toggleBtn">Show</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const passwordInput = document.getElementById("password");
+            const toggleBtn = document.getElementById("toggleBtn");
+
+            toggleBtn.addEventListener("click", function () {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                toggleBtn.textContent = type === 'password' ? 'Show' : 'Hide';
+            });
+        });
+    </script>
+
+</body>
+
+</html>
